@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using SQLiteDemo;
 namespace WPFalibaba
 {
     /// <summary>
@@ -27,7 +28,9 @@ namespace WPFalibaba
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Label1.Content = "button pressed!";
+            Label1.Content = Program.DBInfo();
+            //Label = Program.DBInfo();
+
         }
     }
 }
