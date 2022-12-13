@@ -10,28 +10,26 @@ namespace SQLiteDemo
 {
     class Program
     {
-/*
-        public void DBInfo()
+
+        public static string DBInfo()
         {
             //SQLiteConnection sqlite_conn;
             using (SQLiteConnection sqlite_conn = new SQLiteConnection("Data Source = C:\\Users\\Henri\\source\\repos\\WPFalibaba\\WPFalibaba\\alibabadb.db; Version = 3; New = True; Compress = True; "))
             {
-                //sqlite_conn = CreateConnection(sqlite_conn);
                 sqlite_conn.Open();
                 //sqlite_conn = CreateConnection();
                 //CreateTable(sqlite_conn);
                 //InsertData(sqlite_conn);
-                //ReadData(sqlite_conn);
+                return ReadData(sqlite_conn); 
             }
-        } */
+        }
 
- /*
-        static SQLiteConnection CreateConnection(SQLiteConnection sqlite_conn)
+        static SQLiteConnection CreateConnection()
         {
 
-            
+            SQLiteConnection sqlite_conn;
             // Create a new database connection:
-            //sqlite_conn = new SQLiteConnection("Data Source = C: \\Users\\Henri\\source\\repos\\WPFalibaba\\WPFalibaba\\alibabadb.db; Version = 3; New = True; Compress = True; ");
+            sqlite_conn = new SQLiteConnection("Data Source = C: \\Users\\Henri\\source\\repos\\WPFalibaba\\WPFalibaba\\alibabadb.db; Version = 3; New = True; Compress = True; ");
             // Open the connection:
          try
             {
@@ -42,7 +40,7 @@ namespace SQLiteDemo
 
             }
             return sqlite_conn;
-        } */
+        }
 
         /*
         static void CreateTable(SQLiteConnection conn)
@@ -82,25 +80,21 @@ namespace SQLiteDemo
 
         } */
 
-        public static Object ReadData()
+        static string ReadData(SQLiteConnection conn)
         {
-            using (SQLiteConnection sqlite_conn = new SQLiteConnection("Data Source = C:\\Users\\Henri\\source\\repos\\WPFalibaba\\WPFalibaba\\alibabadb.db; Version = 3; New = True; Compress = True; "))
-            {
-                sqlite_conn.Open();
-                SQLiteDataReader sqlite_datareader;
-                SQLiteCommand sqlite_cmd;
-                sqlite_cmd = sqlite_conn.CreateCommand();
-                sqlite_cmd.CommandText = "SELECT * FROM data";
+            SQLiteDataReader sqlite_datareader;
+            SQLiteCommand sqlite_cmd;
+            sqlite_cmd = conn.CreateCommand();
+            sqlite_cmd.CommandText = "SELECT * FROM data";
 
-                sqlite_datareader = sqlite_cmd.ExecuteReader();
-                while (sqlite_datareader.Read())
-                {
-                    Object myreader = sqlite_datareader.GetString(0);
-                    return myreader;
-                }
-                sqlite_conn.Close();
-                return "Hejsan";
+            sqlite_datareader = sqlite_cmd.ExecuteReader();
+            while (sqlite_datareader.Read())
+            {
+                string myreader = sqlite_datareader.GetString(0);
+                return myreader;
             }
+            conn.Close();
+            return "Hejsan";
         }
     }
 }
