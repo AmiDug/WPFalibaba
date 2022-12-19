@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPFalibaba
 {
-    class Class1
+    internal class ViewModel
     {
-        gfhfghgfhgf
     }
 }

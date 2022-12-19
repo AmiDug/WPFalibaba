@@ -4,8 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFalibaba"
+        xmlns:syncfusion="clr-namespace:Syncfusion.UI.Xaml.Charts;assembly=Syncfusion.SfChart.WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:ViewModel/>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="201*"/>
@@ -13,6 +17,13 @@
         </Grid.ColumnDefinitions>
         <Button Content="Button" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" Click="Button_Click" Grid.Column="1"/>
         <Label x:Name="Label1" Content="Label" HorizontalAlignment="Left" Margin="30,87,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-
+        <syncfusion:SfChart>
+            <syncfusion:SfChart.PrimaryAxis>
+                <syncfusion:CategoryAxis />
+            </syncfusion:SfChart.PrimaryAxis>
+            <syncfusion:SfChart.SecondaryAxis>
+                <syncfusion:NumericalAxis/>
+            </syncfusion:SfChart.SecondaryAxis>
+        </syncfusion:SfChart>
     </Grid>
 </Window>
