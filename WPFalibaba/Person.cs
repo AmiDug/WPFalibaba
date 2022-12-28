@@ -1,6 +1,9 @@
-﻿public class Person
+﻿namespace WPFalibaba
 {
-    public string Name { get; set; }
+    public class Person
+    {
+        public string Name { get; set; }
 
-    public double Height { get; set; }
+        public double Height { get; set; }
+    }
 }
