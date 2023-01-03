@@ -11,7 +11,7 @@ namespace WPFalibaba
     class Program
     {
 
-        public static string DBInfo()
+        public static object DBInfo()
         {
             //SQLiteConnection sqlite_conn;
             using (SQLiteConnection sqlite_conn = new SQLiteConnection("Data Source = C:\\Users\\Henri\\source\\repos\\WPFalibaba\\WPFalibaba\\alibabadb.db; Version = 3; New = True; Compress = True; "))
@@ -80,7 +80,7 @@ namespace WPFalibaba
 
         } */
 
-        static string ReadData(SQLiteConnection conn)
+        static object ReadData(SQLiteConnection conn)
         {
             SQLiteDataReader sqlite_datareader;
             SQLiteCommand sqlite_cmd;
@@ -90,7 +90,7 @@ namespace WPFalibaba
             sqlite_datareader = sqlite_cmd.ExecuteReader();
             while (sqlite_datareader.Read())
             {
-                string myreader = sqlite_datareader.GetString(0);
+                object myreader = sqlite_datareader.GetString(0);
                 return myreader;
             }
             conn.Close();

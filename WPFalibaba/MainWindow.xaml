@@ -10,6 +10,7 @@
     <Window.DataContext>
         <local:ViewModel/>
     </Window.DataContext>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="201*"/>
@@ -17,13 +18,21 @@
         </Grid.ColumnDefinitions>
         <Button Content="Button" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" Click="Button_Click" Grid.Column="1"/>
         <Label x:Name="Label1" Content="Label" HorizontalAlignment="Left" Margin="30,87,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <syncfusion:SfChart> 
+        <syncfusion:SfChart Header="Chart">
             <syncfusion:SfChart.PrimaryAxis>
-                <syncfusion:CategoryAxis />
+                <syncfusion:CategoryAxis Header ="Name"/>
             </syncfusion:SfChart.PrimaryAxis>
             <syncfusion:SfChart.SecondaryAxis>
-                <syncfusion:NumericalAxis/>
+                <syncfusion:NumericalAxis Header="Height(in cm)"/>
             </syncfusion:SfChart.SecondaryAxis>
+            <syncfusion:ColumnSeries  ShowTooltip="True" Label="Heights" ItemsSource="{Binding Data}" >
+                <syncfusion:ColumnSeries.AdornmentsInfo>
+                    <syncfusion:ChartAdornmentInfo ShowLabel="True"/>
+                </syncfusion:ColumnSeries.AdornmentsInfo>
+            </syncfusion:ColumnSeries>
+            <syncfusion:SfChart.Legend>
+                <syncfusion:ChartLegend/>
+            </syncfusion:SfChart.Legend>
         </syncfusion:SfChart>
     </Grid>
 </Window>

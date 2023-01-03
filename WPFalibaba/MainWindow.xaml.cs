@@ -31,6 +31,6 @@ namespace WPFalibaba
             Label1.Content = Program.DBInfo();
             //Label = Program.DBInfo();
 
-        }
+        } 
     }
 }
