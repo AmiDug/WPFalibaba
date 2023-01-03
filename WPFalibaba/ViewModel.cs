@@ -1,22 +1,28 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
+using System;
+using System.Data.Entity;
+using System.Data.SQLite;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 namespace WPFalibaba
 {
     public class ViewModel
     {
-        public object Data = new object();
-        //public List<object> Data;
-
+        public List<Data> data { get; set; }
+        public Dictionary<String, Double> values = Program.DBInfo();
         public ViewModel()
         {
 
-            Data = Program.DBInfo();
-            /*Data = new List<object>()
+            //Data = Program.DBInfo();
+            data = new List<Data>()
             {
-                /*new Person { Name = "David", Height = 180 },
-                new Person { Name = "Michael", Height = 170 },
-                new Person { Name = "Steve", Height = 160 },
-                new Person { Name = "Joel", Height = 182 }
-            }; */
+            };
+            foreach (KeyValuePair<String, Double> dic in values)
+            {
+                data.Add(new Data { Name = dic.Key, Value = dic.Value });
+            }
         }
     }
 }

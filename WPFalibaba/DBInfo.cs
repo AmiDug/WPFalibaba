@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Data.SQLite;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace WPFalibaba
     class Program
     {
 
-        public static object DBInfo()
+        public static Dictionary<String, Double> DBInfo()
         {
             //SQLiteConnection sqlite_conn;
             using (SQLiteConnection sqlite_conn = new SQLiteConnection("Data Source = C:\\Users\\Henri\\source\\repos\\WPFalibaba\\WPFalibaba\\alibabadb.db; Version = 3; New = True; Compress = True; "))
@@ -80,21 +81,24 @@ namespace WPFalibaba
 
         } */
 
-        static object ReadData(SQLiteConnection conn)
+        static Dictionary<String, Double> ReadData(SQLiteConnection conn)
         {
             SQLiteDataReader sqlite_datareader;
             SQLiteCommand sqlite_cmd;
             sqlite_cmd = conn.CreateCommand();
             sqlite_cmd.CommandText = "SELECT * FROM data";
-
+            Dictionary<String, Double> list = new Dictionary<String, Double>();
             sqlite_datareader = sqlite_cmd.ExecuteReader();
             while (sqlite_datareader.Read())
             {
-                object myreader = sqlite_datareader.GetString(0);
-                return myreader;
+                double num = System.Convert.ToDouble(sqlite_datareader[0].ToString());
+                string name = sqlite_datareader[1].ToString();
+                list.Add(name,num);
+                //return myreader;
             }
             conn.Close();
-            return "Hejsan";
+            return list;
+            //return "Hejsan";
         }
     }
 }

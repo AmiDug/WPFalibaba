@@ -25,7 +25,7 @@
             <syncfusion:SfChart.SecondaryAxis>
                 <syncfusion:NumericalAxis Header="Height(in cm)"/>
             </syncfusion:SfChart.SecondaryAxis>
-            <syncfusion:ColumnSeries  ShowTooltip="True" Label="Heights" ItemsSource="{Binding Data}" >
+            <syncfusion:ColumnSeries  ShowTooltip="True" Label="Heights" ItemsSource="{Binding data}" XBindingPath="Name" YBindingPath="Value">
                 <syncfusion:ColumnSeries.AdornmentsInfo>
                     <syncfusion:ChartAdornmentInfo ShowLabel="True"/>
                 </syncfusion:ColumnSeries.AdornmentsInfo>
