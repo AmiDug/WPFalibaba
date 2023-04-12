@@ -4,6 +4,6 @@
     {
         public string Name { get; set; }
 
-        public double Height { get; set; }
+        public string Height { get; set; }
     }
 }

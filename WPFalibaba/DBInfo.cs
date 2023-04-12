@@ -12,10 +12,10 @@ namespace WPFalibaba
     class Program
     {
 
-        public static Dictionary<String, Double> DBInfo()
+        public static List<Data> DBInfo()
         {
             //SQLiteConnection sqlite_conn;
-            using (SQLiteConnection sqlite_conn = new SQLiteConnection("Data Source = C:\\Users\\Henri\\source\\repos\\WPFalibaba\\WPFalibaba\\alibabadb.db; Version = 3; New = True; Compress = True; "))
+            using (SQLiteConnection sqlite_conn = new SQLiteConnection("Data Source = C:\\Users\\xry\\source\\repos\\WPFalibaba\\WPFalibaba\\test_db_csv.sqlite; Version = 3; New = True; Compress = True; "))
             {
                 sqlite_conn.Open();
                 //sqlite_conn = CreateConnection();
@@ -81,19 +81,19 @@ namespace WPFalibaba
 
         } */
 
-        static Dictionary<String, Double> ReadData(SQLiteConnection conn)
+        static List<Data> ReadData(SQLiteConnection conn)
         {
             SQLiteDataReader sqlite_datareader;
             SQLiteCommand sqlite_cmd;
             sqlite_cmd = conn.CreateCommand();
-            sqlite_cmd.CommandText = "SELECT * FROM data";
-            Dictionary<String, Double> list = new Dictionary<String, Double>();
+            sqlite_cmd.CommandText = "SELECT * FROM com4";
+            List<Data> list = new List<Data>();
             sqlite_datareader = sqlite_cmd.ExecuteReader();
             while (sqlite_datareader.Read())
             {
-                double num = System.Convert.ToDouble(sqlite_datareader[0].ToString());
-                string name = sqlite_datareader[1].ToString();
-                list.Add(name,num);
+                string val = sqlite_datareader[0].ToString();
+                string index = sqlite_datareader[19].ToString();
+                list.Add(new Data { Name = index, Value = val });
                 //return myreader;
             }
             conn.Close();
