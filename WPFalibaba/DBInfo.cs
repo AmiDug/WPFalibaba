@@ -11,7 +11,6 @@ namespace WPFalibaba
 {
     class Program
     {
-
         public static List<Data> DBInfo()
         {
             //SQLiteConnection sqlite_conn;
@@ -30,7 +29,7 @@ namespace WPFalibaba
 
             SQLiteConnection sqlite_conn;
             // Create a new database connection:
-            sqlite_conn = new SQLiteConnection("Data Source = C: \\Users\\Henri\\source\\repos\\WPFalibaba\\WPFalibaba\\alibabadb.db; Version = 3; New = True; Compress = True; ");
+            sqlite_conn = new SQLiteConnection("Data Source = C: \\Users\\xry\\source\\repos\\WPFalibaba\\WPFalibaba\\alibabadb.db; Version = 3; New = True; Compress = True; ");
             // Open the connection:
          try
             {
@@ -89,11 +88,16 @@ namespace WPFalibaba
             sqlite_cmd.CommandText = "SELECT * FROM com4";
             List<Data> list = new List<Data>();
             sqlite_datareader = sqlite_cmd.ExecuteReader();
+            int skip = 2;
             while (sqlite_datareader.Read())
             {
-                string val = sqlite_datareader[0].ToString();
-                string index = sqlite_datareader[19].ToString();
-                list.Add(new Data { Name = index, Value = val });
+                if (skip == 0)
+                {
+                    double val = Convert.ToDouble(sqlite_datareader[0].ToString());
+                    DateTime time = DateTime.Parse(sqlite_datareader[5].ToString());
+                    list.Add(new Data { Date = time, Value = val });
+                }
+                else { skip--; }
                 //return myreader;
             }
             conn.Close();

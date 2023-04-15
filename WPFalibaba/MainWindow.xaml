@@ -7,10 +7,7 @@
         xmlns:local="clr-namespace:WPFalibaba"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Window.DataContext>
-        <local:ViewModel/>
-    </Window.DataContext>
-    
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="201*"/>
@@ -18,21 +15,32 @@
         </Grid.ColumnDefinitions>
         <Button Content="Button" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" Click="Button_Click" Grid.Column="1"/>
         <Label x:Name="Label1" Content="Label" HorizontalAlignment="Left" Margin="30,87,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <syncfusion:SfChart Header="Chart">
+        <syncfusion:SfChart x:Name="Chart" Margin="0,20,20,0" AreaBorderThickness="0,1,1,1">
+            <syncfusion:SfChart.DataContext>
+                <local:ViewModel/>
+            </syncfusion:SfChart.DataContext>
             <syncfusion:SfChart.PrimaryAxis>
-                <syncfusion:CategoryAxis Header ="Name"/>
+                <syncfusion:DateTimeAxis LabelFormat="hh:mm:ss">
+                    <syncfusion:ChartAxis.Header>
+                        <TextBlock Margin="10" Text="Time" FontSize="16" FontFamily="SegoeUI"/>
+                    </syncfusion:ChartAxis.Header>
+                </syncfusion:DateTimeAxis>
             </syncfusion:SfChart.PrimaryAxis>
+ 
             <syncfusion:SfChart.SecondaryAxis>
-                <syncfusion:NumericalAxis Header="Height(in cm)"/>
+                <syncfusion:NumericalAxis Minimum="0" Maximum="10" 
+                                     Interval="1" >
+                    <syncfusion:ChartAxis.Header>
+                        <TextBlock Margin="10" Text="Value" FontSize="16" FontFamily="SegoeUI"/>
+                    </syncfusion:ChartAxis.Header>
+                </syncfusion:NumericalAxis>
             </syncfusion:SfChart.SecondaryAxis>
-            <syncfusion:ColumnSeries  ShowTooltip="True" Label="Heights" ItemsSource="{Binding data}" XBindingPath="Name" YBindingPath="Value">
-                <syncfusion:ColumnSeries.AdornmentsInfo>
-                    <syncfusion:ChartAdornmentInfo ShowLabel="True"/>
-                </syncfusion:ColumnSeries.AdornmentsInfo>
-            </syncfusion:ColumnSeries>
-            <syncfusion:SfChart.Legend>
-                <syncfusion:ChartLegend/>
-            </syncfusion:SfChart.Legend>
+
+            <syncfusion:FastLineBitmapSeries EnableAntiAliasing="False" Label="First" 
+                                        XBindingPath="Date" YBindingPath="Value" 
+                                        LegendIcon="SeriesType" StrokeThickness="1"
+                                        ItemsSource="{Binding data}"/>
+
         </syncfusion:SfChart>
     </Grid>
 </Window>

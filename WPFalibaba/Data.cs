@@ -8,9 +8,14 @@ namespace WPFalibaba
 {
     public class Data
     {
-        public string Name { get; set; }
-
-        public string Value { get; set; }
+        
+        /*public Data(DateTime date, double val)
+        {
+            Date = date;
+            Value = val;
+        }*/
+        public DateTime Date { get; set; }
+        public double Value { get; set; }
     }
 }
 
