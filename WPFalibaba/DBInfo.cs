@@ -5,26 +5,28 @@ using System.Data.Entity;
 using System.Data.SQLite;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 
 namespace WPFalibaba
 {
     class Program
     {
-        public static List<Data> DBInfo()
+        public static List<Data> DBInfo(String terrain, String type)
         {
             //SQLiteConnection sqlite_conn;
-            using (SQLiteConnection sqlite_conn = new SQLiteConnection("Data Source = C:\\Users\\xry\\source\\repos\\WPFalibaba\\WPFalibaba\\test_db_csv.sqlite; Version = 3; New = True; Compress = True; "))
+            using (SQLiteConnection sqlite_conn = new SQLiteConnection("Data Source = C:\\Users\\xry\\source\\repos\\WPFalibaba\\WPFalibaba\\SHealthDB.sqlite; Version = 3; New = True; Compress = True; "))
             {
                 sqlite_conn.Open();
                 //sqlite_conn = CreateConnection();
                 //CreateTable(sqlite_conn);
                 //InsertData(sqlite_conn);
-                return ReadData(sqlite_conn); 
+                return ReadData(sqlite_conn, terrain, type); 
             }
         }
 
-        static SQLiteConnection CreateConnection()
+        /*static SQLiteConnection CreateConnection()
         {
 
             SQLiteConnection sqlite_conn;
@@ -40,7 +42,7 @@ namespace WPFalibaba
 
             }
             return sqlite_conn;
-        }
+        }*/
 
         /*
         static void CreateTable(SQLiteConnection conn)
@@ -80,24 +82,31 @@ namespace WPFalibaba
 
         } */
 
-        static List<Data> ReadData(SQLiteConnection conn)
+        static List<Data> ReadData(SQLiteConnection conn, String terrain, String type)
         {
             SQLiteDataReader sqlite_datareader;
             SQLiteCommand sqlite_cmd;
             sqlite_cmd = conn.CreateCommand();
-            sqlite_cmd.CommandText = "SELECT * FROM com4";
+            String query = "";
+            if (terrain == "road") { query = "SELECT * FROM step_data_road"; }
+            if (terrain == "forest") { query = "SELECT * FROM step_data_forest"; }
+            sqlite_cmd.CommandText = query;
             List<Data> list = new List<Data>();
             sqlite_datareader = sqlite_cmd.ExecuteReader();
-            int skip = 2;
+            int column = 0;
+            switch(type)
+            {
+                case ("steps"): column = 9; break;
+                case ("duration"): column = 0; break;
+                case ("speed"): column = 10; break;
+                case ("distance"): column = 11; break;
+                case ("calories"): column = 12; break;
+            }
             while (sqlite_datareader.Read())
             {
-                if (skip == 0)
-                {
-                    double val = Convert.ToDouble(sqlite_datareader[0].ToString());
-                    DateTime time = DateTime.Parse(sqlite_datareader[5].ToString());
-                    list.Add(new Data { Date = time, Value = val });
-                }
-                else { skip--; }
+                double val = Convert.ToDouble(sqlite_datareader[column].ToString());
+                DateTime time = DateTime.Parse(sqlite_datareader[4].ToString());
+                list.Add(new Data { Date = time, Value = val });
                 //return myreader;
             }
             conn.Close();

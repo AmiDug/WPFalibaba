@@ -25,12 +25,5 @@ namespace WPFalibaba
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Label1.Content = Program.DBInfo();
-            //Label = Program.DBInfo();
-
-        } 
     }
 }
