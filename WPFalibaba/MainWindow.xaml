@@ -273,7 +273,7 @@
                                         LegendIcon="SeriesType" StrokeThickness="1"
                                         ItemsSource="{Binding data10}"/>
         </syncfusion:SfChart>
-        <ComboBox x:Name="ChartSelectBox" SelectedValuePath="Content" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="390,0,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
+        <ComboBox x:Name="ChartSelectBox" SelectedValuePath="Content"  Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
             <ComboBoxItem Content="Road Steps"/>
             <ComboBoxItem Content="Road Duration"/>
             <ComboBoxItem Content="Road Speed"/>
