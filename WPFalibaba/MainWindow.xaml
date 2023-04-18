@@ -13,7 +13,7 @@
             <ColumnDefinition Width="201*"/>
             <ColumnDefinition Width="199*"/>
         </Grid.ColumnDefinitions>
-        <syncfusion:SfChart x:Name="Chart" Margin="0,10,10,0" AreaBorderThickness="0,1,1,1" Grid.ColumnSpan="2" Visibility="Hidden">
+        <syncfusion:SfChart x:Name="Chart1" Margin="0,10,10,0" AreaBorderThickness="0,1,1,1" Grid.ColumnSpan="2" Visibility="Hidden">
             <syncfusion:SfChart.DataContext>
                 <local:ViewModel/>
             </syncfusion:SfChart.DataContext>
@@ -52,7 +52,7 @@
             </syncfusion:SfChart.PrimaryAxis>
 
             <syncfusion:SfChart.SecondaryAxis>
-                <syncfusion:NumericalAxis Minimum="0" Maximum="60000" 
+                <syncfusion:NumericalAxis Minimum="0" Maximum="100000" 
                     Interval="1" >
                     <syncfusion:NumericalAxis.Header>
                         <TextBlock Margin="10" Text="Milliseconds" FontSize="16" FontFamily="SegoeUI"/>
@@ -78,7 +78,7 @@
             </syncfusion:SfChart.PrimaryAxis>
 
             <syncfusion:SfChart.SecondaryAxis>
-                <syncfusion:NumericalAxis Minimum="0.8" Maximum="1.2" 
+                <syncfusion:NumericalAxis Minimum="0.5" Maximum="1.5" 
                     Interval="1" >
                     <syncfusion:NumericalAxis.Header>
                         <TextBlock Margin="10" Text="m/s" FontSize="16" FontFamily="SegoeUI"/>
@@ -182,7 +182,7 @@
             </syncfusion:SfChart.PrimaryAxis>
 
             <syncfusion:SfChart.SecondaryAxis>
-                <syncfusion:NumericalAxis Minimum="0" Maximum="60000" 
+                <syncfusion:NumericalAxis Minimum="0" Maximum="100000" 
                                      Interval="1" >
                     <syncfusion:ChartAxis.Header>
                         <TextBlock Margin="10" Text="Milliseconds" FontSize="16" FontFamily="SegoeUI"/>
@@ -208,7 +208,7 @@
             </syncfusion:SfChart.PrimaryAxis>
 
             <syncfusion:SfChart.SecondaryAxis>
-                <syncfusion:NumericalAxis Minimum="0.8" Maximum="1.2" 
+                <syncfusion:NumericalAxis Minimum="0.5" Maximum="1.5" 
                                      Interval="1" >
                     <syncfusion:ChartAxis.Header>
                         <TextBlock Margin="10" Text="m/s" FontSize="16" FontFamily="SegoeUI"/>
@@ -273,5 +273,17 @@
                                         LegendIcon="SeriesType" StrokeThickness="1"
                                         ItemsSource="{Binding data10}"/>
         </syncfusion:SfChart>
+        <ComboBox x:Name="ChartSelectBox" SelectedValuePath="Content" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="390,0,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content="Road Steps"/>
+            <ComboBoxItem Content="Road Duration"/>
+            <ComboBoxItem Content="Road Speed"/>
+            <ComboBoxItem Content="Road Distance"/>
+            <ComboBoxItem Content="Road Calories"/>
+            <ComboBoxItem Content="Forest Steps"/>
+            <ComboBoxItem Content="Forest Duration"/>
+            <ComboBoxItem Content="Forest Speed"/>
+            <ComboBoxItem Content="Forest Distance"/>
+            <ComboBoxItem Content="Forest Calories"/>
+        </ComboBox>
     </Grid>
 </Window>
