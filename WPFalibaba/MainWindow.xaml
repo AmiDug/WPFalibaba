@@ -13,7 +13,7 @@
             <ColumnDefinition Width="201*"/>
             <ColumnDefinition Width="199*"/>
         </Grid.ColumnDefinitions>
-        <syncfusion:SfChart x:Name="Chart" Margin="0,10,10,0" AreaBorderThickness="0,1,1,1" Grid.ColumnSpan="2">
+        <syncfusion:SfChart x:Name="Chart" Margin="0,10,10,0" AreaBorderThickness="0,1,1,1" Grid.ColumnSpan="2" Visibility="Hidden">
             <syncfusion:SfChart.DataContext>
                 <local:ViewModel/>
             </syncfusion:SfChart.DataContext>
@@ -29,7 +29,7 @@
                 <syncfusion:NumericalAxis Minimum="0" Maximum="100" 
                                      Interval="1" >
                     <syncfusion:ChartAxis.Header>
-                        <TextBlock Margin="10" Text="Value" FontSize="16" FontFamily="SegoeUI"/>
+                        <TextBlock Margin="10" Text="Steps" FontSize="16" FontFamily="SegoeUI"/>
                     </syncfusion:ChartAxis.Header>
                 </syncfusion:NumericalAxis>
             </syncfusion:SfChart.SecondaryAxis>
@@ -55,7 +55,7 @@
                 <syncfusion:NumericalAxis Minimum="0" Maximum="60000" 
                     Interval="1" >
                     <syncfusion:NumericalAxis.Header>
-                        <TextBlock Margin="10" Text="Value" FontSize="16" FontFamily="SegoeUI"/>
+                        <TextBlock Margin="10" Text="Milliseconds" FontSize="16" FontFamily="SegoeUI"/>
                     </syncfusion:NumericalAxis.Header>
                 </syncfusion:NumericalAxis>
             </syncfusion:SfChart.SecondaryAxis>
@@ -81,7 +81,7 @@
                 <syncfusion:NumericalAxis Minimum="0.8" Maximum="1.2" 
                     Interval="1" >
                     <syncfusion:NumericalAxis.Header>
-                        <TextBlock Margin="10" Text="Value" FontSize="16" FontFamily="SegoeUI"/>
+                        <TextBlock Margin="10" Text="m/s" FontSize="16" FontFamily="SegoeUI"/>
                     </syncfusion:NumericalAxis.Header>
                 </syncfusion:NumericalAxis>
             </syncfusion:SfChart.SecondaryAxis>
@@ -107,7 +107,7 @@
                 <syncfusion:NumericalAxis Minimum="0" Maximum="100" 
                                      Interval="1" >
                     <syncfusion:ChartAxis.Header>
-                        <TextBlock Margin="10" Text="Value" FontSize="16" FontFamily="SegoeUI"/>
+                        <TextBlock Margin="10" Text="Meters" FontSize="16" FontFamily="SegoeUI"/>
                     </syncfusion:ChartAxis.Header>
                 </syncfusion:NumericalAxis>
             </syncfusion:SfChart.SecondaryAxis>
@@ -130,10 +130,10 @@
             </syncfusion:SfChart.PrimaryAxis>
 
             <syncfusion:SfChart.SecondaryAxis>
-                <syncfusion:NumericalAxis Minimum="0" Maximum="100" 
+                <syncfusion:NumericalAxis Minimum="0" Maximum="5" 
                                      Interval="1" >
                     <syncfusion:ChartAxis.Header>
-                        <TextBlock Margin="10" Text="Value" FontSize="16" FontFamily="SegoeUI"/>
+                        <TextBlock Margin="10" Text="kcal" FontSize="16" FontFamily="SegoeUI"/>
                     </syncfusion:ChartAxis.Header>
                 </syncfusion:NumericalAxis>
             </syncfusion:SfChart.SecondaryAxis>
@@ -159,7 +159,7 @@
                 <syncfusion:NumericalAxis Minimum="0" Maximum="100" 
                                      Interval="1" >
                     <syncfusion:ChartAxis.Header>
-                        <TextBlock Margin="10" Text="Value" FontSize="16" FontFamily="SegoeUI"/>
+                        <TextBlock Margin="10" Text="Steps" FontSize="16" FontFamily="SegoeUI"/>
                     </syncfusion:ChartAxis.Header>
                 </syncfusion:NumericalAxis>
             </syncfusion:SfChart.SecondaryAxis>
@@ -182,10 +182,10 @@
             </syncfusion:SfChart.PrimaryAxis>
 
             <syncfusion:SfChart.SecondaryAxis>
-                <syncfusion:NumericalAxis Minimum="0" Maximum="100" 
+                <syncfusion:NumericalAxis Minimum="0" Maximum="60000" 
                                      Interval="1" >
                     <syncfusion:ChartAxis.Header>
-                        <TextBlock Margin="10" Text="Value" FontSize="16" FontFamily="SegoeUI"/>
+                        <TextBlock Margin="10" Text="Milliseconds" FontSize="16" FontFamily="SegoeUI"/>
                     </syncfusion:ChartAxis.Header>
                 </syncfusion:NumericalAxis>
             </syncfusion:SfChart.SecondaryAxis>
@@ -208,10 +208,10 @@
             </syncfusion:SfChart.PrimaryAxis>
 
             <syncfusion:SfChart.SecondaryAxis>
-                <syncfusion:NumericalAxis Minimum="0" Maximum="100" 
+                <syncfusion:NumericalAxis Minimum="0.8" Maximum="1.2" 
                                      Interval="1" >
                     <syncfusion:ChartAxis.Header>
-                        <TextBlock Margin="10" Text="Value" FontSize="16" FontFamily="SegoeUI"/>
+                        <TextBlock Margin="10" Text="m/s" FontSize="16" FontFamily="SegoeUI"/>
                     </syncfusion:ChartAxis.Header>
                 </syncfusion:NumericalAxis>
             </syncfusion:SfChart.SecondaryAxis>
@@ -237,7 +237,7 @@
                 <syncfusion:NumericalAxis Minimum="0" Maximum="100" 
                                      Interval="1" >
                     <syncfusion:ChartAxis.Header>
-                        <TextBlock Margin="10" Text="Value" FontSize="16" FontFamily="SegoeUI"/>
+                        <TextBlock Margin="10" Text="Meters" FontSize="16" FontFamily="SegoeUI"/>
                     </syncfusion:ChartAxis.Header>
                 </syncfusion:NumericalAxis>
             </syncfusion:SfChart.SecondaryAxis>
@@ -260,10 +260,10 @@
             </syncfusion:SfChart.PrimaryAxis>
 
             <syncfusion:SfChart.SecondaryAxis>
-                <syncfusion:NumericalAxis Minimum="0" Maximum="100" 
+                <syncfusion:NumericalAxis Minimum="0" Maximum="5" 
                                      Interval="1" >
                     <syncfusion:ChartAxis.Header>
-                        <TextBlock Margin="10" Text="Value" FontSize="16" FontFamily="SegoeUI"/>
+                        <TextBlock Margin="10" Text="kcal" FontSize="16" FontFamily="SegoeUI"/>
                     </syncfusion:ChartAxis.Header>
                 </syncfusion:NumericalAxis>
             </syncfusion:SfChart.SecondaryAxis>
