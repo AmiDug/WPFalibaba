@@ -8,7 +8,7 @@ namespace WPFalibaba
     {
         public static List<Data> DBInfo(String terrain, String type)
         {
-            using (SQLiteConnection sqlite_conn = new SQLiteConnection("Data Source = C:\\Users\\xry\\source\\repos\\WPFalibaba\\WPFalibaba\\SHealthDB.sqlite; Version = 3; New = True; Compress = True; "))
+            using (SQLiteConnection sqlite_conn = new SQLiteConnection("Data Source =" + System.Windows.Forms.Application.StartupPath + "\\..\\..\\..\\SHealthDB.sqlite; Version = 3; New = True; Compress = True; "))
             {
                 sqlite_conn.Open();
                 return ReadData(sqlite_conn, terrain, type); 
