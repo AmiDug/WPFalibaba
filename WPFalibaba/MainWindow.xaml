@@ -39,7 +39,7 @@
                                         LegendIcon="SeriesType" StrokeThickness="1"
                                         ItemsSource="{Binding data1}"/>
         </syncfusion:SfChart>
-        <syncfusion:SfChart x:Name="Chart2" Margin="0,10,10,0" AreaBorderThickness="0,1,1,1" Grid.ColumnSpan="2">
+        <syncfusion:SfChart x:Name="Chart2" Margin="0,10,10,0" AreaBorderThickness="0,1,1,1" Grid.ColumnSpan="2" Visibility="Hidden">
             <syncfusion:SfChart.DataContext>
                 <local:ViewModel/>
             </syncfusion:SfChart.DataContext>
@@ -64,6 +64,214 @@
                 XBindingPath="Date" YBindingPath="Value" 
                 LegendIcon="SeriesType" StrokeThickness="1"
                 ItemsSource="{Binding data2}"/>
+        </syncfusion:SfChart>
+        <syncfusion:SfChart x:Name="Chart3" Margin="0,10,10,0" AreaBorderThickness="0,1,1,1" Grid.ColumnSpan="2" Visibility="Hidden">
+            <syncfusion:SfChart.DataContext>
+                <local:ViewModel/>
+            </syncfusion:SfChart.DataContext>
+            <syncfusion:SfChart.PrimaryAxis>
+                <syncfusion:DateTimeAxis LabelFormat="hh:mm:ss">
+                    <syncfusion:DateTimeAxis.Header>
+                        <TextBlock Margin="10" Text="Time" FontSize="16" FontFamily="SegoeUI"/>
+                    </syncfusion:DateTimeAxis.Header>
+                </syncfusion:DateTimeAxis>
+            </syncfusion:SfChart.PrimaryAxis>
+
+            <syncfusion:SfChart.SecondaryAxis>
+                <syncfusion:NumericalAxis Minimum="0.8" Maximum="1.2" 
+                    Interval="1" >
+                    <syncfusion:NumericalAxis.Header>
+                        <TextBlock Margin="10" Text="Value" FontSize="16" FontFamily="SegoeUI"/>
+                    </syncfusion:NumericalAxis.Header>
+                </syncfusion:NumericalAxis>
+            </syncfusion:SfChart.SecondaryAxis>
+
+            <syncfusion:FastLineBitmapSeries EnableAntiAliasing="False" Label="First" 
+                XBindingPath="Date" YBindingPath="Value" 
+                LegendIcon="SeriesType" StrokeThickness="1"
+                ItemsSource="{Binding data3}"/>
+        </syncfusion:SfChart>
+        <syncfusion:SfChart x:Name="Chart4" Margin="0,10,10,0" AreaBorderThickness="0,1,1,1" Grid.ColumnSpan="2" Visibility="Hidden">
+            <syncfusion:SfChart.DataContext>
+                <local:ViewModel/>
+            </syncfusion:SfChart.DataContext>
+            <syncfusion:SfChart.PrimaryAxis>
+                <syncfusion:DateTimeAxis LabelFormat="hh:mm:ss">
+                    <syncfusion:ChartAxis.Header>
+                        <TextBlock Margin="10" Text="Time" FontSize="16" FontFamily="SegoeUI"/>
+                    </syncfusion:ChartAxis.Header>
+                </syncfusion:DateTimeAxis>
+            </syncfusion:SfChart.PrimaryAxis>
+
+            <syncfusion:SfChart.SecondaryAxis>
+                <syncfusion:NumericalAxis Minimum="0" Maximum="100" 
+                                     Interval="1" >
+                    <syncfusion:ChartAxis.Header>
+                        <TextBlock Margin="10" Text="Value" FontSize="16" FontFamily="SegoeUI"/>
+                    </syncfusion:ChartAxis.Header>
+                </syncfusion:NumericalAxis>
+            </syncfusion:SfChart.SecondaryAxis>
+
+            <syncfusion:FastLineBitmapSeries EnableAntiAliasing="False" Label="First" 
+                                        XBindingPath="Date" YBindingPath="Value" 
+                                        LegendIcon="SeriesType" StrokeThickness="1"
+                                        ItemsSource="{Binding data4}"/>
+        </syncfusion:SfChart>
+        <syncfusion:SfChart x:Name="Chart5" Margin="0,10,10,0" AreaBorderThickness="0,1,1,1" Grid.ColumnSpan="2" Visibility="Hidden">
+            <syncfusion:SfChart.DataContext>
+                <local:ViewModel/>
+            </syncfusion:SfChart.DataContext>
+            <syncfusion:SfChart.PrimaryAxis>
+                <syncfusion:DateTimeAxis LabelFormat="hh:mm:ss">
+                    <syncfusion:ChartAxis.Header>
+                        <TextBlock Margin="10" Text="Time" FontSize="16" FontFamily="SegoeUI"/>
+                    </syncfusion:ChartAxis.Header>
+                </syncfusion:DateTimeAxis>
+            </syncfusion:SfChart.PrimaryAxis>
+
+            <syncfusion:SfChart.SecondaryAxis>
+                <syncfusion:NumericalAxis Minimum="0" Maximum="100" 
+                                     Interval="1" >
+                    <syncfusion:ChartAxis.Header>
+                        <TextBlock Margin="10" Text="Value" FontSize="16" FontFamily="SegoeUI"/>
+                    </syncfusion:ChartAxis.Header>
+                </syncfusion:NumericalAxis>
+            </syncfusion:SfChart.SecondaryAxis>
+
+            <syncfusion:FastLineBitmapSeries EnableAntiAliasing="False" Label="First" 
+                                        XBindingPath="Date" YBindingPath="Value" 
+                                        LegendIcon="SeriesType" StrokeThickness="1"
+                                        ItemsSource="{Binding data5}"/>
+        </syncfusion:SfChart>
+        <syncfusion:SfChart x:Name="Chart6" Margin="0,10,10,0" AreaBorderThickness="0,1,1,1" Grid.ColumnSpan="2" Visibility="Hidden">
+            <syncfusion:SfChart.DataContext>
+                <local:ViewModel/>
+            </syncfusion:SfChart.DataContext>
+            <syncfusion:SfChart.PrimaryAxis>
+                <syncfusion:DateTimeAxis LabelFormat="hh:mm:ss">
+                    <syncfusion:ChartAxis.Header>
+                        <TextBlock Margin="10" Text="Time" FontSize="16" FontFamily="SegoeUI"/>
+                    </syncfusion:ChartAxis.Header>
+                </syncfusion:DateTimeAxis>
+            </syncfusion:SfChart.PrimaryAxis>
+
+            <syncfusion:SfChart.SecondaryAxis>
+                <syncfusion:NumericalAxis Minimum="0" Maximum="100" 
+                                     Interval="1" >
+                    <syncfusion:ChartAxis.Header>
+                        <TextBlock Margin="10" Text="Value" FontSize="16" FontFamily="SegoeUI"/>
+                    </syncfusion:ChartAxis.Header>
+                </syncfusion:NumericalAxis>
+            </syncfusion:SfChart.SecondaryAxis>
+
+            <syncfusion:FastLineBitmapSeries EnableAntiAliasing="False" Label="First" 
+                                        XBindingPath="Date" YBindingPath="Value" 
+                                        LegendIcon="SeriesType" StrokeThickness="1"
+                                        ItemsSource="{Binding data6}"/>
+        </syncfusion:SfChart>
+        <syncfusion:SfChart x:Name="Chart7" Margin="0,10,10,0" AreaBorderThickness="0,1,1,1" Grid.ColumnSpan="2" Visibility="Hidden">
+            <syncfusion:SfChart.DataContext>
+                <local:ViewModel/>
+            </syncfusion:SfChart.DataContext>
+            <syncfusion:SfChart.PrimaryAxis>
+                <syncfusion:DateTimeAxis LabelFormat="hh:mm:ss">
+                    <syncfusion:ChartAxis.Header>
+                        <TextBlock Margin="10" Text="Time" FontSize="16" FontFamily="SegoeUI"/>
+                    </syncfusion:ChartAxis.Header>
+                </syncfusion:DateTimeAxis>
+            </syncfusion:SfChart.PrimaryAxis>
+
+            <syncfusion:SfChart.SecondaryAxis>
+                <syncfusion:NumericalAxis Minimum="0" Maximum="100" 
+                                     Interval="1" >
+                    <syncfusion:ChartAxis.Header>
+                        <TextBlock Margin="10" Text="Value" FontSize="16" FontFamily="SegoeUI"/>
+                    </syncfusion:ChartAxis.Header>
+                </syncfusion:NumericalAxis>
+            </syncfusion:SfChart.SecondaryAxis>
+
+            <syncfusion:FastLineBitmapSeries EnableAntiAliasing="False" Label="First" 
+                                        XBindingPath="Date" YBindingPath="Value" 
+                                        LegendIcon="SeriesType" StrokeThickness="1"
+                                        ItemsSource="{Binding data7}"/>
+        </syncfusion:SfChart>
+        <syncfusion:SfChart x:Name="Chart8" Margin="0,10,10,0" AreaBorderThickness="0,1,1,1" Grid.ColumnSpan="2" Visibility="Hidden">
+            <syncfusion:SfChart.DataContext>
+                <local:ViewModel/>
+            </syncfusion:SfChart.DataContext>
+            <syncfusion:SfChart.PrimaryAxis>
+                <syncfusion:DateTimeAxis LabelFormat="hh:mm:ss">
+                    <syncfusion:ChartAxis.Header>
+                        <TextBlock Margin="10" Text="Time" FontSize="16" FontFamily="SegoeUI"/>
+                    </syncfusion:ChartAxis.Header>
+                </syncfusion:DateTimeAxis>
+            </syncfusion:SfChart.PrimaryAxis>
+
+            <syncfusion:SfChart.SecondaryAxis>
+                <syncfusion:NumericalAxis Minimum="0" Maximum="100" 
+                                     Interval="1" >
+                    <syncfusion:ChartAxis.Header>
+                        <TextBlock Margin="10" Text="Value" FontSize="16" FontFamily="SegoeUI"/>
+                    </syncfusion:ChartAxis.Header>
+                </syncfusion:NumericalAxis>
+            </syncfusion:SfChart.SecondaryAxis>
+
+            <syncfusion:FastLineBitmapSeries EnableAntiAliasing="False" Label="First" 
+                                        XBindingPath="Date" YBindingPath="Value" 
+                                        LegendIcon="SeriesType" StrokeThickness="1"
+                                        ItemsSource="{Binding data8}"/>
+        </syncfusion:SfChart>
+        <syncfusion:SfChart x:Name="Chart9" Margin="0,10,10,0" AreaBorderThickness="0,1,1,1" Grid.ColumnSpan="2" Visibility="Hidden">
+            <syncfusion:SfChart.DataContext>
+                <local:ViewModel/>
+            </syncfusion:SfChart.DataContext>
+            <syncfusion:SfChart.PrimaryAxis>
+                <syncfusion:DateTimeAxis LabelFormat="hh:mm:ss">
+                    <syncfusion:ChartAxis.Header>
+                        <TextBlock Margin="10" Text="Time" FontSize="16" FontFamily="SegoeUI"/>
+                    </syncfusion:ChartAxis.Header>
+                </syncfusion:DateTimeAxis>
+            </syncfusion:SfChart.PrimaryAxis>
+
+            <syncfusion:SfChart.SecondaryAxis>
+                <syncfusion:NumericalAxis Minimum="0" Maximum="100" 
+                                     Interval="1" >
+                    <syncfusion:ChartAxis.Header>
+                        <TextBlock Margin="10" Text="Value" FontSize="16" FontFamily="SegoeUI"/>
+                    </syncfusion:ChartAxis.Header>
+                </syncfusion:NumericalAxis>
+            </syncfusion:SfChart.SecondaryAxis>
+
+            <syncfusion:FastLineBitmapSeries EnableAntiAliasing="False" Label="First" 
+                                        XBindingPath="Date" YBindingPath="Value" 
+                                        LegendIcon="SeriesType" StrokeThickness="1"
+                                        ItemsSource="{Binding data9}"/>
+        </syncfusion:SfChart>
+        <syncfusion:SfChart x:Name="Chart10" Margin="0,10,10,0" AreaBorderThickness="0,1,1,1" Grid.ColumnSpan="2" Visibility="Hidden">
+            <syncfusion:SfChart.DataContext>
+                <local:ViewModel/>
+            </syncfusion:SfChart.DataContext>
+            <syncfusion:SfChart.PrimaryAxis>
+                <syncfusion:DateTimeAxis LabelFormat="hh:mm:ss">
+                    <syncfusion:ChartAxis.Header>
+                        <TextBlock Margin="10" Text="Time" FontSize="16" FontFamily="SegoeUI"/>
+                    </syncfusion:ChartAxis.Header>
+                </syncfusion:DateTimeAxis>
+            </syncfusion:SfChart.PrimaryAxis>
+
+            <syncfusion:SfChart.SecondaryAxis>
+                <syncfusion:NumericalAxis Minimum="0" Maximum="100" 
+                                     Interval="1" >
+                    <syncfusion:ChartAxis.Header>
+                        <TextBlock Margin="10" Text="Value" FontSize="16" FontFamily="SegoeUI"/>
+                    </syncfusion:ChartAxis.Header>
+                </syncfusion:NumericalAxis>
+            </syncfusion:SfChart.SecondaryAxis>
+
+            <syncfusion:FastLineBitmapSeries EnableAntiAliasing="False" Label="First" 
+                                        XBindingPath="Date" YBindingPath="Value" 
+                                        LegendIcon="SeriesType" StrokeThickness="1"
+                                        ItemsSource="{Binding data10}"/>
         </syncfusion:SfChart>
     </Grid>
 </Window>
