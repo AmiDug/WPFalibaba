@@ -6,7 +6,7 @@
         xmlns:syncfusion="clr-namespace:Syncfusion.UI.Xaml.Charts;assembly=Syncfusion.SfChart.WPF"
         xmlns:local="clr-namespace:WPFalibaba"
         mc:Ignorable="d"
-        Title="MainWindow" Height="900" Width="900">
+        Title="Alibaba" Height="900" Width="900">
 
     <Grid>
         <Grid.ColumnDefinitions>
